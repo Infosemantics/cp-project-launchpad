@@ -2,5 +2,8 @@
   "dockerComposeFile": "docker-compose.yml",
   "service": "development",
   "forwardPorts": [8080],
-  "postCreateCommand": "yarn install && yarn cy install"
+"postCreateCommand": "yarn install && yarn cy install",
+"extensions": [
+	"vscodevim.vim"
+]
 }
