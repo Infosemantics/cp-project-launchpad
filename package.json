@@ -3,7 +3,8 @@
   "repository": "https://github.com/AriPerkkio/cypress-codespaces-example",
   "license": "MIT",
   "scripts": {
-    "cy": "cypress"
+    "cy": "cypress",
+    "test": "cy open"
   },
   "devDependencies": {
     "cypress": "^8.7.0"
