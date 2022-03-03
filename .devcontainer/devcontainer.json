@@ -5,6 +5,7 @@
 "postCreateCommand": "yarn install && yarn cy install",
 "extensions": [
 	"vscodevim.vim",
-	"Orta.vscode-jest"
+	"Orta.vscode-jest",
+	"esbenp.prettier-vscode"
 ]
 }
