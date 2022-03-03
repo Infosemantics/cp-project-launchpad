@@ -9,6 +9,13 @@ A template for starting new Captivate projects with the following features:
 
 All features are designed to work with GitHuB Codespaces.
 
+## Installation
+Initialize your new Git repository and then run the following command:
+
+```
+npx degit Infosemantics/cp-project-launchpad --force
+```
+
 ## Running Cypress tests
 
 Setup based on https://github.com/cypress-io/cypress-documentation/issues/2956#issuecomment-930527836.
