@@ -31,7 +31,7 @@
     "postversion": "git push && git push --tags"
   },
   "devDependencies": {
-    "@Infosemantics/cp-cypress-commands": "^1.1.0",
+    "@Infosemantics/cp-cypress-commands": "^1.2.1",
     "@Infosemantics/dist2test": "^0.0.3",
     "@types/jest": "^27.4.1",
     "@types/web": "^0.0.53",
