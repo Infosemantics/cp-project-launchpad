@@ -25,10 +25,11 @@ describe('example of cp-cypress-commands', () => {
     cy.startCp();
 
     // Check variable values
-    cy.getCpVar("MyVar1").then(value => expect(value).to.eq("default"))
+    cy.getCpVar("MyVar1").should("eq", "default");
 
     cy.setCpVar("MyVar1", "new value");
 
+    // A longer way of asserting the variable, that allows you to access the variable value.
     cy.getCpVar("MyVar1").then(value => expect(value).to.eq("new value"))
 
   })
