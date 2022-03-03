@@ -2,12 +2,29 @@
   "name": "cypress-codespaces-example",
   "repository": "https://github.com/AriPerkkio/cypress-codespaces-example",
   "license": "MIT",
+  "author": "Tristan Ward",
+  "main": "dist/tsc/index.js",
+  "types": "dist/tsc/index.d.ts",
   "scripts": {
+    "build:tsc": "tsc -p tsconfig.json",
+    "build": "esbuild src/index.ts --bundle --outfile=dist/index-bundle.js",
+    "build:mini": "esbuild src/index.ts --bundle --minify --sourcemap=external --outfile=dist/index-bundle-mini.js",
+    "cli": "ts-node src/cli.ts",
     "cy": "cypress",
-    "test": "cypress open",
-    "reset-cypress": "rimraf cypress.json cypress/fixtures cypress/plugins cypress/support",
+    "test:e2e": "cypress open",
+    "test:unit": "jest",
+    "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx",
+    "clean:dist": "rimraf dist build",
+    "clean:cypress": "rimraf cypress.json cypress/fixtures cypress/plugins cypress/support",
+    "clean": "npm run clean:dist && npm run clean:cypress",
     "server": "dist2test",
-    "test-server": "npm run server & npm run test"
+    "test-server": "npm run server & npm run test:e2e",
+    "ts-node": "ts-node",
+    "prepare": "npm run build:tsc && npm run build && npm run build:mini",
+    "prepublishOnly": "npm run test:unit && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "devDependencies": {
     "@Infosemantics/dist2test": "^0.0.3",
@@ -16,11 +33,15 @@
     "@typescript-eslint/eslint-plugin": "^5.13.0",
     "@typescript-eslint/parser": "^5.13.0",
     "cypress": "^8.7.0",
+    "esbuild": "^0.14.23",
     "eslint": "^8.10.0",
     "jest": "^27.5.1",
     "rimraf": "^3.0.2",
     "ts-jest": "^27.1.3",
     "ts-node": "^10.6.0",
     "typescript": "^4.6.2"
-  }
+  },
+  "files": [
+    "dist/**/**"
+  ]
 }

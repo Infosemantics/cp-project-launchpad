@@ -4,6 +4,7 @@
   "forwardPorts": [8080],
 "postCreateCommand": "yarn install && yarn cy install",
 "extensions": [
-	"vscodevim.vim"
+	"vscodevim.vim",
+	"Orta.vscode-jest"
 ]
 }
