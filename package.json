@@ -4,9 +4,14 @@
   "license": "MIT",
   "scripts": {
     "cy": "cypress",
-    "test": "cypress open"
+    "test": "cypress open",
+    "reset-cypress": "rimraf cypress.json cypress/fixtures cypress/plugins cypress/support",
+    "server": "dist2test",
+    "test-server": "npm run server & npm run test"
   },
   "devDependencies": {
-    "cypress": "^8.7.0"
+    "@Infosemantics/dist2test": "^0.0.3",
+    "cypress": "^8.7.0",
+    "rimraf": "^3.0.2"
   }
 }
